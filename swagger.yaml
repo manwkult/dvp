@@ -1,0 +1,39 @@
+tags:
+- name: Products
+  description: Products API
+
+paths:
+# [GET] products
+  /api/products:
+    get:
+      tags:
+      - products
+      summary: Find All Products
+      responses:
+        200:
+          description: 'OK'
+        500:
+          description: 'Server Error'
+
+# definitions
+definitions:
+  products:
+    type: object
+    required:
+        - id
+        - name
+        - price
+    properties:
+      id:
+        type: number
+        description: Product Identifier
+      name:
+        type: string
+        description: Product Name
+      price:
+        type: number
+        description: Product Price
+
+schemes:
+ - https
+ - http
